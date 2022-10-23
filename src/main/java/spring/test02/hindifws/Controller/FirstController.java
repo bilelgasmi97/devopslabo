@@ -7,7 +7,7 @@ public class FirstController {
 	
 	@GetMapping("/first")
 	public String SayHello(){
-		return "Hello World to everybody";
+		return "Hello World to ever";
 	}
 
 }
