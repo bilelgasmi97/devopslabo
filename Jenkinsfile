@@ -12,5 +12,10 @@ pipeline {
                 git branch: 'bilel', url: 'https://github.com/bilelgasmi97/devopslabo.git'
             }
         }
+         stage('Unit Testing') {
+            steps {
+                sh 'mvn test'
+            }
+        }
     }
 }
