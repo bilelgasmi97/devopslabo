@@ -40,6 +40,11 @@ pipeline {
                 }
             }
         }
+         stage('Nexus'){
+            steps{
+                sh 'mvn deploy -DskipTests'
+            }
+        }
         /*  stage('upload war file to nexus') {
             steps {
                 script{
@@ -64,9 +69,5 @@ pipeline {
         } */
         
     }
-         stage('Nexus'){
-            steps{
-                sh 'mvn deploy -DskipTests'
-            }
-        }
+        
 }
