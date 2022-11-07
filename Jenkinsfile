@@ -30,7 +30,7 @@ pipeline {
         stage('StaticAnalytic') {
             steps {
                script{
-                    withSonarQubeEnv(credentialsId: 'sonar-api-key') {
+                    withSonarQubeEnv(credentialsId: 'sonarqube-key') {
                          sh """mvn sonar:sonar -DskipTests \
                             -Dsonar.language=java 
                            
