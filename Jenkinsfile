@@ -29,12 +29,12 @@ pipeline {
         }
         stage('Static Analytic') {
             steps {
-                script{
-                    withSonarQubeEnv(credentialsId : 'sonar-api-key'){
-                        sh 'mvn clean package sonar:sonar'
-                    }
+                    sh """mvn sonar:sonar -DskipTests \
+                            -Dsonar.language=java 
+                           
+                            
+                    """
                 }
-            }
         }
         
     }
