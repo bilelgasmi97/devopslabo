@@ -47,7 +47,7 @@ pipeline {
                     [
                         [
                             artifactId: 'achat',
-                            classifier: '', file: 'target/Achat.jat',
+                            classifier: '', file: 'target/achat.jar',
                             type: 'jar'
                         ]
                     ], 
