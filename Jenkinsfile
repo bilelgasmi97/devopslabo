@@ -27,14 +27,18 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stage('Static Analytic') {
+        stage('StaticAnalytic') {
             steps {
-                    sh """mvn sonar:sonar -DskipTests \
+               script{
+                    withSonarQubeEnv(credentialsId: 'sonar-api-key') {
+                         sh """mvn sonar:sonar -DskipTests \
                             -Dsonar.language=java 
                            
                             
-                    """
+                        """
+                    }
                 }
+            }
         }
         
     }
