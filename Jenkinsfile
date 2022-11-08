@@ -73,7 +73,7 @@ pipeline {
                     ], 
                     credentialsId: 'nexus-api-auth',
                     groupId: 'tn.esprit.rh',
-                    nexusUrl: '192.168.1.100:8081',
+                    nexusUrl: '192.168.1.7:8081',
                     nexusVersion: 'nexus3',
                     protocol: 'http',
                     repository: 'demoapp-release',
@@ -85,7 +85,7 @@ pipeline {
         stage('Docker Image') {
             steps {
                 script{
-                    sh 'docker image build -t $JOB_NAME:v1.$BUILD_ID'
+                    sh 'docker image build -t $JOB_NAME:v1.$BUILD_ID .'
                     SH 'docker image tag $JOB_NAME:v1.$BUILD_ID bilelgasmi/$JOB_NAME:v1.$BUILD_ID'
                     SH 'docker image tag $JOB_NAME:v1.$BUILD_ID bilelgasmi/$JOB_NAME:latest'
                 }
