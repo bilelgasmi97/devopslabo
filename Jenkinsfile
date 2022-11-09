@@ -91,7 +91,7 @@ pipeline {
                 }
             }
         } 
-        stage(' Push Image to the DockerHub') {
+       /*  stage(' Push Image to the DockerHub') {
             steps {
                 script{
                     withCredentials([string(credentialsId: 'dockerhub_Cred_pass', variable: 'dockerhub_cred')]) {
@@ -101,7 +101,7 @@ pipeline {
                     }
                 }    
             }
-        }
+        } */
         stage('Docker Compose') {
             steps {
                 sh 'docker-compose up -d --build'
